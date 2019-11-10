@@ -1,6 +1,7 @@
 {
   "pages": [
-    "pages/index/index"
+    "pages/index/index",
+    "pages/game/game"
   ],
   "subPackages": [],
   "window": {
@@ -11,5 +12,5 @@
   },
   "permission": {},
   "usingComponents": {},
-  "sitemapLocation": "sitemap10.json"
+  "sitemapLocation": "sitemap54.json"
 }
