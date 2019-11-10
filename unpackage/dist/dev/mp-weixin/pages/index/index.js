@@ -228,6 +228,10 @@ var shuffle = __webpack_require__(/*! lodash.shuffle */ 21);var _default =
 
   onShareAppMessage: function onShareAppMessage(options) {
     console.log('分享的代码！！');
+    return {
+      path: 'pages/index/index',
+      title: '这题好难，你能帮帮我吗？' };
+
   } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

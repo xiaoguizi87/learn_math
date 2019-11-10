@@ -1,6 +1,6 @@
 
 .titleTxt {
-	color: #3F536E;
+	color: #444;
 	font-size: 20px;
 }
 .main {
@@ -47,12 +47,12 @@ image {
 }
 .numText {
 	font-size: 24px;
-	color: #007AFF;
+	color: #12cbff;
 	line-height: 40px;
 }
 .problemText {
 	font-size: 40px;
-	color: #007AFF;
+	color: #3498db;
 	line-height: 60px;
 }
 .head {
@@ -97,9 +97,12 @@ image {
 	width: 90vw;
 	margin-top: 50rpx;
 }
-.box {
-	width: 120rpx;
-	height: 120rpx;
+.numberBtn {
+	color: white;
+	background-color: #1abc9c;
+	font-size: 24px;
+	width: 60px;
+	height: 60px;
 }
 .logo {
 	height: 200rpx;

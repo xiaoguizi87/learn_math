@@ -9,7 +9,7 @@
 			<text class="problemText">{{item.problem}}</text>
 			<view class="row">
 				<view v-for="(t, idx) in item.options" :key="idx" class="box" @click="handleClick(idx, item.result)">
-					<button>{{t}}</button>
+					<button class="numberBtn">{{t}}</button>
 				</view>
 			</view>
 		</view>
@@ -95,13 +95,17 @@
 		},
 		onShareAppMessage: function(options) {
 			console.log('分享的代码！！')
+			return {
+				path: 'pages/index/index',
+				title: '这题好难，你能帮帮我吗？'
+			}
 		}
 	}
 </script>
 
 <style>
 	.titleTxt {
-		color: #3F536E;
+		color: #444;
 		font-size: 20px;
 	}
 
@@ -129,13 +133,13 @@
 
 	.numText {
 		font-size: 24px;
-		color: #007AFF;
+		color: #12cbff;
 		line-height: 40px;
 	}
 
 	.problemText {
 		font-size: 40px;
-		color: #007AFF;
+		color: #3498db;
 		line-height: 60px;
 	}
 
@@ -156,12 +160,15 @@
 		width: 90vw;
 		margin-top: 50upx;
 	}
-
-	.box {
-		width: 120upx;
-		height: 120upx;
+	
+	.numberBtn {
+		color: white;
+		background-color: #1abc9c;
+		font-size: 24px;
+		width: 60px;
+		height: 60px;
 	}
-
+	
 	.logo {
 		height: 200rpx;
 		width: 200rpx;
