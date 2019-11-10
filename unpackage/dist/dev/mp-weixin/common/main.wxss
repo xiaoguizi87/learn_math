@@ -1,0 +1,27 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*每个页面公共css */
+.shareBtn {
+	position: fixed;
+	bottom: 100rpx;
+	right: -5rpx;
+	width: 120rpx;
+	font-size: 10px;
+	height: 60rpx;
+	background: pink;
+}
+
+
