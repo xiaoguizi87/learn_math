@@ -14,6 +14,7 @@
       </view>
     </view>
     <button class='shareBtn' open-type="share">分享</button>
+    <ad unit-id="7l6adkb126411210b1" bindload="adloadhandler" binderror="aderrorhandler"></ad>
   </view>
 </template>
 

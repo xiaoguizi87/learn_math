@@ -1,7 +1,8 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/game/game"
+    "pages/game/game",
+    "pages/sudoku/sudoku"
   ],
   "subPackages": [],
   "window": {
@@ -12,5 +13,5 @@
   },
   "permission": {},
   "usingComponents": {},
-  "sitemapLocation": "sitemap54.json"
+  "sitemapLocation": "sitemap87.json"
 }
