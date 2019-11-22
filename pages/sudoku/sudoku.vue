@@ -1,5 +1,6 @@
 <template>
   <view class='main'>
+    <text>题目编号：{{qid}}</text>
     <view class='grids'>
       <view v-for='(r, i) in board' :key='i' class='row'>
         <view class='cell' v-for='(c, j) in r' :key='j' :class="{empty: board[i][j] === '', selected: i === selectedX && j === selectedY,gray: initPos.includes(`${i},${j}`)}"
@@ -19,10 +20,12 @@
 <script>
   const sample = require('lodash.sample')
   const MAXN = 4;
+  const quections = require('data/quections').data
 
   export default {
     data() {
       return {
+        qid: 10001,
         board: [],
         initPos: [],
         numbers: [1, 2, 3, 4, "X"],
@@ -31,10 +34,10 @@
       };
     },
     methods: {
-      initData() {
+      initData(qid) {
         this.selectedX = -1
         this.selectedY = -1
-        this.board = this.getBoard()
+        this.board = this.getBoard(qid)
         this.initPos = []
         for (let i = 0; i < this.board.length; i++) {
           for (let j = 0; j < this.board[i].length; j++) {
@@ -43,41 +46,20 @@
             }
           }
         }
+        this.qid = qid
       },
-      getBoard() {
-        let problems = [
-          [
-            ['', '', '', ''],
-            ['3', '', '', ''],
-            ['', '', '4', ''],
-            ['', '2', '3', '']
-          ],
-          [
-            ['', '1', '', ''],
-            ['3', '', '1', '2'],
-            ['', '3', '2', ''],
-            ['1', '', '4', '3']
-          ],
-          [
-            ['', '1', '', ''],
-            ['2', '3', '4', ''],
-            ['', '4', '', '3'],
-            ['', '2', '', '']
-          ],
-          [
-            ['', '1', '3', ''],
-            ['2', '', '4', '1'],
-            ['1', '', '2', ''],
-            ['3', '', '', '4']
-          ],
-          [
-            ['4', '1', '3', '2'],
-            ['', '', '1', ''],
-            ['', '', '4', ''],
-            ['3', '4', '', '1']
-          ],
-        ]
-        return sample(problems)
+      getBoard(qid) {
+        console.log(quections, qid, quections['' + qid])
+        let tt = quections['' + qid]
+        let res = []
+        for (let i = 0; i < MAXN; i++) {
+          let row = []
+          for (let j = 0; j < MAXN; j++) {
+            row.push(tt[i][j] === '.' ? '' : tt[i][j])
+          }
+          res.push(row)
+        }
+        return res
       },
       clickGrid(i, j) {
         console.log(i, j)
@@ -214,12 +196,10 @@
           confirmText: '下一题',
           success: res => {
             if (res.confirm) {
-              this.initData()
+              this.initData(this.qid + 1)
             }
           }
         });
-        
-        uni.sho
       },
       playAudio(src) {
         const innerAudioContext = wx.createInnerAudioContext()
@@ -228,7 +208,12 @@
       }
     },
     onLoad() {
-      this.initData()
+      this.opType = this.$mp.query.qid
+      console.log(this.$mp.query.qid)
+      if (this.$mp.query.qid) {
+        
+      }
+      this.initData(this.qid)
     },
     onShareAppMessage: function(options) {
       console.log('分享的代码！！')
