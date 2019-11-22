@@ -15,6 +15,7 @@
     </view>
     <image src="../../static/restart.png" mode="aspectFill" class='restartBtn' @click='restart()'></image>
     <button class='shareBtn' open-type="share">分享</button>
+    <ad unit-id="7l6adkb126411210b1" bindload="adloadhandler" binderror="aderrorhandler"></ad>
   </view>
 </template>
 
@@ -187,7 +188,10 @@
 
         console.log('all complete')
         this.playAudio('static/audios/victory.wav')
-        uni.setStorage({key: 'passedQid', data: '' +this.qid})
+        uni.setStorage({
+          key: 'passedQid',
+          data: '' + this.qid
+        })
         uni.showModal({
           title: '成功',
           content: `恭喜您成功通关!`,
@@ -218,7 +222,7 @@
         });
       },
       playAudio(src) {
-        const innerAudioContext = wx.createInnerAudioContext()
+        const innerAudioContext = uni.createInnerAudioContext()
         innerAudioContext.autoplay = true
         innerAudioContext.src = src
       }
@@ -339,6 +343,7 @@
     display: flex;
     justify-content: space-around;
     margin-top: 25rpx;
+    margin-bottom: 50rpx;
     width: 80vw;
   }
 
@@ -365,8 +370,12 @@
   .restartBtn {
     position: absolute;
     top: 10px;
-    left: 10px;
+    right: 10px;
     width: 40px;
     height: 40px;
+  }
+  
+  ad {
+    margin-top: 50rpx;
   }
 </style>

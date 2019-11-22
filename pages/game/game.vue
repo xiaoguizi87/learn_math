@@ -106,7 +106,7 @@
           this.quections = this.generateProblems()
       },
       playAudio(src) {
-        const innerAudioContext = wx.createInnerAudioContext()
+        const innerAudioContext = uni.createInnerAudioContext()
         innerAudioContext.autoplay = true
         innerAudioContext.src = src
         // console.log('play')
