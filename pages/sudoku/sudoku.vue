@@ -50,7 +50,6 @@
         this.qid = qid
       },
       getBoard(qid) {
-        console.log(quections, qid, quections['' + qid])
         let tt = quections['' + qid]
         let res = []
         for (let i = 0; i < MAXN; i++) {
@@ -188,7 +187,7 @@
 
         console.log('all complete')
         this.playAudio('static/audios/victory.wav')
-
+        uni.setStorage({key: 'passedQid', data: '' +this.qid})
         uni.showModal({
           title: '成功',
           content: `恭喜您成功通关!`,
@@ -205,7 +204,7 @@
         });
       },
       restart() {
-          uni.showModal({
+        uni.showModal({
           title: '',
           content: `您确定要重新开始？`,
           showCancel: true,
@@ -213,8 +212,8 @@
           confirmText: '确定',
           success: res => {
             if (res.confirm) {
-             this.initData(this.qid)
-            } 
+              this.initData(this.qid)
+            }
           }
         });
       },
@@ -226,10 +225,15 @@
     },
     onLoad() {
       this.opType = this.$mp.query.qid
-      console.log(this.$mp.query.qid)
       if (this.$mp.query.qid) {
         this.qid = parseInt(this.$mp.query.qid)
-        console.log('xxg', this.qid)
+      } else {
+        uni.getStorage({
+          key: 'passedQid',
+          success: (e) => {
+            this.qid = parseInt(e.data) + 1
+          }
+        })
       }
       this.initData(this.qid)
     },
@@ -285,11 +289,11 @@
   .selected {
     background: pink;
   }
-  
-  .gray{
+
+  .gray {
     background: lightgray;
   }
-  
+
   .cell:first-child {
     border-left: solid;
   }
@@ -357,6 +361,7 @@
     padding-top: 25rpx;
     margin-bottom: 25rpx;
   }
+
   .restartBtn {
     position: absolute;
     top: 10px;
