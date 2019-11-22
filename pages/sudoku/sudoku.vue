@@ -13,6 +13,7 @@
     <view class='input-row'>
       <view class='input-num' v-for='(i, k) in numbers' :key='k' @click='handleNumBtn(i)'>{{i}}</view>
     </view>
+    <image src="../../static/restart.png" mode="aspectFill" class='restartBtn' @click='restart()'></image>
     <button class='shareBtn' open-type="share">分享</button>
   </view>
 </template>
@@ -142,7 +143,7 @@
             gridCheck.push(this.board[i][j]);
           }
         }
-        console.log(gridCheck)
+        // console.log(gridCheck)
         //如果发现的同样的
         if (this.isErr) {
           return
@@ -200,6 +201,20 @@
             } else {
               this.initData(this.qid)
             }
+          }
+        });
+      },
+      restart() {
+          uni.showModal({
+          title: '',
+          content: `您确定要重新开始？`,
+          showCancel: true,
+          cancelText: '取消',
+          confirmText: '确定',
+          success: res => {
+            if (res.confirm) {
+             this.initData(this.qid)
+            } 
           }
         });
       },
@@ -341,5 +356,12 @@
     justify-content: space-around;
     padding-top: 25rpx;
     margin-bottom: 25rpx;
+  }
+  .restartBtn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 40px;
+    height: 40px;
   }
 </style>
