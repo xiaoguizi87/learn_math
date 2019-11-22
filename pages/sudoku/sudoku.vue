@@ -2,7 +2,7 @@
   <view class='main'>
     <view class='grids'>
       <view v-for='(r, i) in board' :key='i' class='row'>
-        <view class='cell' v-for='(c, j) in r' :key='j' :class="{empty: board[i][j] === '', selected: i === selectedX && j === selectedY}"
+        <view class='cell' v-for='(c, j) in r' :key='j' :class="{empty: board[i][j] === '', selected: i === selectedX && j === selectedY,gray: initPos.includes(`${i},${j}`)}"
           @click='clickGrid(i, j)'>
           {{c}}
         </view>
@@ -211,11 +211,15 @@
           content: `恭喜您成功通关!`,
           showCancel: true,
           cancelText: '取消',
-          confirmText: '重来',
+          confirmText: '下一题',
           success: res => {
-            this.initData()
+            if (res.confirm) {
+              this.initData()
+            }
           }
         });
+        
+        uni.sho
       },
       playAudio(src) {
         const innerAudioContext = wx.createInnerAudioContext()
@@ -278,7 +282,11 @@
   .selected {
     background: pink;
   }
-
+  
+  .gray{
+    background: lightgray;
+  }
+  
   .cell:first-child {
     border-left: solid;
   }
