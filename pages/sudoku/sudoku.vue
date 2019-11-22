@@ -197,6 +197,8 @@
           success: res => {
             if (res.confirm) {
               this.initData(this.qid + 1)
+            } else {
+              this.initData(this.qid)
             }
           }
         });
@@ -211,14 +213,15 @@
       this.opType = this.$mp.query.qid
       console.log(this.$mp.query.qid)
       if (this.$mp.query.qid) {
-        
+        this.qid = parseInt(this.$mp.query.qid)
+        console.log('xxg', this.qid)
       }
       this.initData(this.qid)
     },
     onShareAppMessage: function(options) {
       console.log('分享的代码！！')
       return {
-        path: 'pages/index/index',
+        path: `pages/sudoku/sudoku?qid=${this.qid}`,
         title: '来比比谁更聪明？'
       }
     }
