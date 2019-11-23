@@ -186,7 +186,7 @@
         }
 
         console.log('all complete')
-        this.playAudio('static/audios/victory.wav')
+        this.playAudio('static/audios/success.mp3')
         uni.setStorage({
           key: 'passedQid',
           data: '' + this.qid
