@@ -16,7 +16,7 @@
 	/*每个页面公共css */
 	.shareBtn {
 		position: fixed;
-		top: 500rpx;
+		top: 20rpx;
 		right: -5rpx;
 		width: 120rpx;
 		font-size: 10px;

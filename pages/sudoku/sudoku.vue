@@ -20,7 +20,6 @@
 </template>
 
 <script>
-  const sample = require('lodash.sample')
   const MAXN = 4;
   const quections = require('data/quections').data
 
@@ -295,7 +294,7 @@
   }
 
   .gray {
-    background: lightgray;
+    background: #F0FFFF;
   }
 
   .cell:first-child {
@@ -353,7 +352,7 @@
     height: 100rpx;
     line-height: 100rpx;
     text-align: center;
-    border: 2rpx solid skyblue;
+    border: 2px solid skyblue;
   }
 
   .input-num.red {
@@ -375,7 +374,13 @@
     height: 40px;
   }
   
-  ad {
-    margin-top: 50rpx;
+  .shareBtn {
+  	position: fixed;
+  	top: 180rpx;
+  	right: -5rpx;
+  	width: 120rpx;
+  	font-size: 10px;
+  	height: 60rpx;
+  	background: pink;
   }
 </style>

@@ -206,4 +206,14 @@
     font-size: 36rpx;
     color: #8f8f94;
   }
+  
+  .shareBtn {
+  	position: fixed;
+  	top: 20rpx;
+  	right: -5rpx;
+  	width: 120rpx;
+  	font-size: 10px;
+  	height: 60rpx;
+  	background: pink;
+  }
 </style>
