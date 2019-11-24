@@ -15,7 +15,7 @@
     </view>
     <image src="../../static/restart.png" mode="aspectFill" class='restartBtn' @click='restart()'></image>
     <button class='shareBtn' open-type="share">分享</button>
-    <ad unit-id="7l6adkb126411210b1" bindload="adloadhandler"></ad>
+    <ad unit-id="7l6adkb126411210b1" bindload="adloadhandler" binderror="aderrorhandler"></ad>
   </view>
 </template>
 
@@ -62,7 +62,7 @@
         return res
       },
       clickGrid(i, j) {
-        // console.log(i, j)
+        console.log(i, j)
         if (this.initPos.includes(`${i},${j}`)) {
           return
         }
@@ -149,11 +149,11 @@
         }
         for (let i = 0; i < MAXN; i++) {
           let r = this.board[i]
-          // console.log(r)
+          console.log(r)
           let s = new Set([...r])
-          // console.log(s)
+          console.log(s)
           if (s.size < MAXN || s.has('')) {
-            // console.log('行没完成', i);
+            console.log('行没完成', i);
             return
           }
         }
@@ -162,11 +162,11 @@
           for (let j = 0; j < MAXN; j++) {
             c.push(this.board[j][i])
           }
-          // console.log(c)
+          console.log(c)
           let s = new Set([...c])
-          // console.log(s)
+          console.log(s)
           if (s.size < MAXN || s.has('')) {
-            // console.log('列没完成', i);
+            console.log('列没完成', i);
             return
           }
         }
@@ -175,9 +175,9 @@
             let r = [this.board[i * 2][j * 2], this.board[i * 2 + 1][j * 2],
               this.board[i * 2][j * 2 + 1], this.board[i * 2 + 1][j * 2 + 1]
             ]
-            // console.log(r)
+            console.log(r)
             let s = new Set([...r])
-            // console.log(s)
+            console.log(s)
             if (s.size < MAXN || s.has('')) {
               console.log('行没完成', i);
               return
@@ -186,7 +186,7 @@
         }
 
         console.log('all complete')
-        this.playAudio('static/audios/success.mp3')
+        this.playAudio('static/audios/victory.wav')
         uni.setStorage({
           key: 'passedQid',
           data: '' + this.qid

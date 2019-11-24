@@ -29,7 +29,6 @@
   .titleTxt {
     color: #ff5994;
     font-size: 40px;
-    margin: 50rpx 0rpx;
   }
 
   .main {
