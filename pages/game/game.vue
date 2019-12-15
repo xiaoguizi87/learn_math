@@ -27,12 +27,10 @@
 				rightNum: 0,
 				wrongNum: 0,
 				quections: [],
-				problemIdx: 0,
-				timer: undefined,
+				problemIdx: 0
 			}
 		},
 		onLoad() {
-			console.log(this.$mp.query)
 			this.opType = this.$mp.query.type
 			this.quections = this.generateProblems()
 		},
