@@ -3,7 +3,9 @@
     <text class="titleTxt">趣学小学数学</text>
     <button @click='goto("/pages/game/game?type=1")'>和为10以内加法</button>
     <button @click='goto("/pages/game/game?type=2")'>和为10~20加法</button>
-	<button @click='goto("/pages/game/game?type=3")'>99乘法表</button>
+	<button @click='goto("/pages/game/game?type=3")'>三数相加</button>
+	<button @click='goto("/pages/game/game?type=4")'>99乘法表</button>
+	<button @click='goto("/pages/game/game?type=5")'>基础除法</button>
     <button @click='goto("/pages/sudoku/sudoku")'>四宫数独</button>
   </view>
 </template>
