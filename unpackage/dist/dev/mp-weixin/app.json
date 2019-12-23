@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/game/game",
-    "pages/sudoku/sudoku"
+    "pages/sudoku/sudoku",
+    "pages/mine/mine"
   ],
   "subPackages": [],
   "window": {
@@ -11,7 +12,33 @@
     "navigationBarBackgroundColor": "#F8F8F8",
     "backgroundColor": "#F8F8F8"
   },
+  "tabBar": {
+    "color": "#999",
+    "backgroundColor": "#fafafa",
+    "selectedColor": "#333",
+    "borderStyle": "white",
+    "list": [
+      {
+        "text": "主页",
+        "pagePath": "pages/index/index",
+        "iconPath": "static/tabs/home.png",
+        "selectedIconPath": "static/tabs/home-active.png"
+      },
+      {
+        "text": "数独",
+        "pagePath": "pages/sudoku/sudoku",
+        "iconPath": "static/tabs/exam.png",
+        "selectedIconPath": "static/tabs/exam-active.png"
+      },
+      {
+        "text": "我的",
+        "pagePath": "pages/mine/mine",
+        "iconPath": "static/tabs/mine.png",
+        "selectedIconPath": "static/tabs/mine-active.png"
+      }
+    ],
+    "position": "bottom"
+  },
   "permission": {},
-  "usingComponents": {},
-  "sitemapLocation": "sitemap39.json"
+  "usingComponents": {}
 }

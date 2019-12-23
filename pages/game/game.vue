@@ -27,12 +27,10 @@
 				rightNum: 0,
 				wrongNum: 0,
 				quections: [],
-				problemIdx: 0,
-				timer: undefined,
+				problemIdx: 0
 			}
 		},
 		onLoad() {
-			console.log(this.$mp.query)
 			this.opType = this.$mp.query.type
 			this.quections = this.generateProblems()
 		},
@@ -52,6 +50,10 @@
 					return this.getProblemByOpId_2()
 				} else if (opTypeId === '3') {
 					return this.getProblemByOpId_3()
+				} else if (opTypeId === '4') {
+					return this.getProblemByOpId_4()
+				} else if (opTypeId === '5') {
+					return this.getProblemByOpId_5()
 				}
 			},
 			getProblemByOpId_1() {
@@ -102,7 +104,7 @@
 					options: tmp
 				}
 			},
-			getProblemByOpId_3() {
+			getProblemByOpId_4() {
 				let x = parseInt(Math.random() * 10)
 				let y = parseInt(Math.random() * 9 + 1)
 				let res = x * y
@@ -120,6 +122,51 @@
 				let options = tmp
 				return {
 					problem: `${x} * ${y} = ?`,
+					result: result,
+					options: tmp
+				}
+			},
+			getProblemByOpId_5() {
+				let res = parseInt(Math.random() * 10)
+				let x = parseInt(Math.random() * 9 + 1)
+				let y = res * x
+				let wrongOptions = [res + 1, res + 2, res + 3]
+				if (res > 2) {
+					wrongOptions.push(res - 2)
+					wrongOptions.push(res - 1)
+				}
+				let t = shuffle(wrongOptions)
+				let tmp = t.slice(0, 3)
+				let result = parseInt(Math.random() * 4)
+				tmp.splice(result, 0, res)
+				let options = tmp
+				return {
+					problem: `${y} / ${x} = ?`,
+					result: result,
+					options: tmp
+				}
+			},
+			getProblemByOpId_3() {
+				let x = parseInt(Math.random() * 5) + 5
+				let y = parseInt(Math.random() * 5) + 5
+				let z = parseInt(Math.random() * 10)
+				let res = x + y + z
+				let wrongOptions = [res + 1, res + 2, res + 3, res + 4]
+				if (res > 2) {
+					wrongOptions.push(res - 2)
+					wrongOptions.push(res - 1)
+				}
+				if (res > 4) {
+					wrongOptions.push(res - 3)
+					wrongOptions.push(res - 4)
+				}
+				let t = shuffle(wrongOptions)
+				let tmp = t.slice(0, 3)
+				let result = parseInt(Math.random() * 4)
+				tmp.splice(result, 0, res)
+				let options = tmp
+				return {
+					problem: `${x} + ${y}  + ${z}= ?`,
 					result: result,
 					options: tmp
 				}

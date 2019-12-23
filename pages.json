@@ -14,7 +14,35 @@
             "path" : "pages/sudoku/sudoku",
             "style" : {}
         }
+        ,{
+            "path" : "pages/mine/mine",
+            "style" : {}
+        }
     ],
+    "tabBar": {
+      "color": "#999",
+      "backgroundColor": "#fafafa",
+      "selectedColor": "#333",
+      "borderStyle": "white",
+    
+      "list": [{
+        "text": "主页",
+        "pagePath": "pages/index/index",
+        "iconPath": "static/tabs/home.png",
+        "selectedIconPath": "static/tabs/home-active.png"
+      }, {
+        "text": "数独",
+        "pagePath": "pages/sudoku/sudoku",
+        "iconPath": "static/tabs/exam.png",
+        "selectedIconPath": "static/tabs/exam-active.png"
+      }, {
+        "text": "我的",
+        "pagePath": "pages/mine/mine",
+        "iconPath": "static/tabs/mine.png",
+        "selectedIconPath": "static/tabs/mine-active.png"
+      }],
+      "position": "bottom"
+    },
   "globalStyle": {
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "趣学小学数学",
