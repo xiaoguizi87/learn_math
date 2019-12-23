@@ -25,7 +25,7 @@
         "selectedIconPath": "static/tabs/home-active.png"
       },
       {
-        "text": "数独",
+        "text": "四宫数独",
         "pagePath": "pages/sudoku/sudoku",
         "iconPath": "static/tabs/exam.png",
         "selectedIconPath": "static/tabs/exam-active.png"
