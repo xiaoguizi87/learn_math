@@ -13,15 +13,5 @@
 </script>
 
 <style>
-	/*每个页面公共css */
-	.shareBtn {
-		position: fixed;
-		top: 20rpx;
-		right: -5rpx;
-		width: 120rpx;
-		font-size: 10px;
-		height: 60rpx;
-		background: pink;
-	}
-	
+	/*每个页面公共css */	
 </style>

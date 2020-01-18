@@ -54,4 +54,13 @@ button {
   color: #12cbff;
   width: 70vw;
 }
+.shareBtn {
+  position: fixed;
+  bottom: 200rpx;
+  right: -25rpx;
+  width: 120rpx;
+  font-size: 10px;
+  height: 60rpx;
+  background: pink;
+}
 

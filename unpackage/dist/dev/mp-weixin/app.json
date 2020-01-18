@@ -40,5 +40,6 @@
     "position": "bottom"
   },
   "permission": {},
-  "usingComponents": {}
+  "usingComponents": {},
+  "navigateToMiniProgramAppIdList": ["wx18a2ac992306a5a4"]
 }

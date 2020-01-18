@@ -6,12 +6,16 @@
         <view class='cell' v-for='(c, j) in r' :key='j' :class="{empty: board[i][j] === '', selected: i === selectedX && j === selectedY,gray: initPos.includes(`${i},${j}`)}"
           @click='clickGrid(i, j)'>
           {{c}}
+          <!-- <image :src='`../../static/fruit${c}.png`' class='tt'></image> -->
         </view>
       </view>
     </view>
 
     <view class='input-row'>
-      <view class='input-num' v-for='(i, k) in numbers' :key='k' @click='handleNumBtn(i)'>{{i}}</view>
+      <view class='input-num' v-for='(i, k) in numbers' :key='k' @click='handleNumBtn(i)'>
+        {{i}}
+        <!-- <image :src='`../../static/fruit${i}.png`' class='tt'></image> -->
+      </view>
     </view>
     <image src="../../static/restart.png" mode="aspectFill" class='restartBtn' @click='restart()'></image>
     <button class='shareBtn' open-type="share">分享</button>
@@ -373,14 +377,19 @@
     width: 40px;
     height: 40px;
   }
-  
+
+  .tt {
+    width: 100rpx;
+    height: 100rpx;
+  }
+
   .shareBtn {
-  	position: fixed;
-  	top: 180rpx;
-  	right: -5rpx;
-  	width: 120rpx;
-  	font-size: 10px;
-  	height: 60rpx;
-  	background: pink;
+    position: fixed;
+    top: 180rpx;
+    right: -5rpx;
+    width: 120rpx;
+    font-size: 10px;
+    height: 60rpx;
+    background: pink;
   }
 </style>

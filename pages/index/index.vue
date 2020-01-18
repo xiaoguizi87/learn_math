@@ -6,6 +6,7 @@
     <button @click='goto("/pages/game/game?type=3")'>三数相加</button>
     <button @click='goto("/pages/game/game?type=4")'>99乘法表</button>
     <button @click='goto("/pages/game/game?type=5")'>基础除法</button>
+    <button class='shareBtn' open-type="share">分享</button> 
   </view>
 </template>
 
@@ -49,4 +50,14 @@
     color: #12cbff;
     width: 70vw;
   }
+
+	.shareBtn {
+		position: fixed;
+		bottom: 200rpx;
+		right: -25rpx;
+		width: 120rpx;
+		font-size: 10px;
+		height: 60rpx;
+		background: pink;
+	}
 </style>
